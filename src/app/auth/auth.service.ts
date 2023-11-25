@@ -31,7 +31,7 @@ export class AuthService {
       ).pipe(
         map((user) => {
           console.log(user);
-          localStorage.setItem("user", JSON.stringify(user));
+          localStorage.setItem(email, JSON.stringify(user));
           return user;
         })
       )
