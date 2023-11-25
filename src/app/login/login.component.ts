@@ -21,6 +21,6 @@ export class LoginComponent {
       return;
     }
     console.log("sending to login", val.email, val.password)
-    this.authService.login(val.email, val.password);
+    this.authService.login(val.email, val.password).subscribe();
   }
 }
