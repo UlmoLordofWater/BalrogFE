@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../auth/auth.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-sign-up',
@@ -10,13 +12,17 @@ import { AuthService } from '../auth/auth.service';
 
 export class SignUpComponent {
 
-  constructor(public authService: AuthService) {}
+  constructor(public authService: AuthService, private router: Router) {}
 
   onSignup(form: NgForm) {
     if (form.invalid) {
       return;
     }
-    this.authService.createUser(form.value.email, form.value.password);
+    this.authService.createUser(form.value.email, form.value.password).subscribe(
+      () => {
+        this.router.navigate(["/auth/login"]);
+      }
+    );
   }
 
 }

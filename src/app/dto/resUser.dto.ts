@@ -3,4 +3,5 @@ export interface resUserDto {
   email: string;
   name: string;
   access_token: string;
+  expiresIn: number;
 }

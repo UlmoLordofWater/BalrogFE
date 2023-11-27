@@ -13,15 +13,13 @@ const BACKEND_URL = "http://localhost:3000/"
 })
 export class AuthService {
 
+  private isAuthenticated = false;
+
   constructor(private http: HttpClient, private router: Router) {}
 
   createUser(email: string, password: string){
     const authData: AuthData = { email: email, password: password};
-    this.http.post(BACKEND_URL + "register", authData).subscribe(
-      () => {
-        this.router.navigate(["/login"]);
-      }
-    )
+    return this.http.post(BACKEND_URL + "register", authData);
   }
 
   login(email: string, password: string) {
@@ -31,12 +29,41 @@ export class AuthService {
       BACKEND_URL + "auth/login", authData
       ).pipe(
         map((user) => {
-          console.log(user.access_token);
-          let token = JSON.stringify(user.access_token)
-          let userId = JSON.stringify(user.id)
-          localStorage.setItem('token', token);
-          localStorage.setItem('userId', userId);
+          let token = JSON.stringify(user.access_token);
+          let userId = JSON.stringify(user.id);
+          this.saveAuthData(token, userId)
         })
       )
-    }
+  }
+
+  // autoAuthData(){
+  //       const authInfo = this.getAuthData();
+  //       if(!authInfo) return;
+  // }
+
+  logout(){
+    this.removeAuthData();
+  }
+
+  private saveAuthData(token: string, userId: string){
+      localStorage.setItem('token', token);
+      localStorage.setItem('userId', userId);
+  }
+
+  private removeAuthData(){
+      localStorage.removeItem('token');
+      localStorage.removeItem('userId');
+  }
+
+
+
+  private getAuthData(){
+      const token = localStorage.getItem('token');
+      const userId = localStorage.getItem('userId');
+      if(!token) return;
+      return {
+        token: token,
+        userId: userId
+      }
+  }
 }

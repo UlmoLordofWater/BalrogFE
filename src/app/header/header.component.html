@@ -10,7 +10,7 @@
     <a mat-button href="" class="right" [routerLink]="['/']">Signup</a>
   </li>
   <li>
-    <a mat-button href="" class="right" [routerLink]="['/']">Logout</a>
+    <a mat-button href="" class="right" (click)="onLogout()" [routerLink]="['/']">Logout</a>
   </li>
   <li>
     <a mat-button href="" class="right" [routerLink]="['/profile']">Profile</a>

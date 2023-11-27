@@ -12,6 +12,7 @@ export class LoginComponent {
 
   constructor(
       private authService: AuthService,
+      private router: Router,
     ) {}
 
   onLogin(form: NgForm){
@@ -21,6 +22,9 @@ export class LoginComponent {
       return;
     }
     console.log("sending to login", val.email, val.password)
-    this.authService.login(val.email, val.password).subscribe();
+    this.authService.login(val.email, val.password).subscribe(
+      () => (
+        this.router.navigate(['/profile'])
+      ));
   }
 }
