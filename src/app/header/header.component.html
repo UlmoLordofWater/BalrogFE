@@ -1,19 +1,19 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" class="header">
 <ul>
   <li>
-    <a mat-button href="" class="home" [routerLink]="['/']">Home</a>
+    <a mat-button href="" class="home" [routerLink]="['/home']">Home</a>
   </li>
   <li>
     <a mat-button href="" class="right" [routerLink]="['/auth/login']">Login</a>
   </li>
-  <li>
+  <li *ngIf="!userIsAuthenticated" >
     <a mat-button href="" class="right" [routerLink]="['/']">Signup</a>
   </li>
-  <li>
-    <a mat-button href="" class="right" (click)="onLogout()" [routerLink]="['/']">Logout</a>
-  </li>
-  <li>
+  <li *ngIf="userIsAuthenticated">
     <a mat-button href="" class="right" [routerLink]="['/profile']">Profile</a>
+  </li>
+  <li *ngIf="userIsAuthenticated" >
+    <a mat-button href="" class="right" (click)="onLogout()" [routerLink]="['/']">Logout</a>
   </li>
 </ul>
 </mat-toolbar>
