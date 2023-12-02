@@ -12,6 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
 import { AngularMaterialModule } from './angular-material.module';
 import { HomeComponent } from './home/home.component';
+import { ErrorComponent } from './error/error.component';
+import { PostsComponent } from './posts/posts.component';
+import { TodoComponent } from './todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { HomeComponent } from './home/home.component';
     HeaderComponent,
     LoginComponent,
     ProfileComponent,
-    HomeComponent
+    HomeComponent,
+    ErrorComponent,
+    PostsComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,

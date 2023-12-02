@@ -1,19 +1,25 @@
 <mat-toolbar color="primary" class="header">
 <ul>
-  <li>
+  <li *ngIf="router.url != '/home'">
     <a mat-button href="" class="home" [routerLink]="['/home']">Home</a>
   </li>
-  <li>
+  <li *ngIf="!userIsAuthenticated && router.url != '/auth/login'">
     <a mat-button href="" class="right" [routerLink]="['/auth/login']">Login</a>
   </li>
-  <li *ngIf="!userIsAuthenticated" >
+  <li *ngIf="!userIsAuthenticated && router.url != '/'">
     <a mat-button href="" class="right" [routerLink]="['/']">Signup</a>
   </li>
-  <li *ngIf="userIsAuthenticated">
+  <li *ngIf="userIsAuthenticated && router.url != '/profile'">
     <a mat-button href="" class="right" [routerLink]="['/profile']">Profile</a>
   </li>
   <li *ngIf="userIsAuthenticated" >
     <a mat-button href="" class="right" (click)="onLogout()" [routerLink]="['/']">Logout</a>
+  </li>
+  <li *ngIf="userIsAuthenticated" >
+    <a mat-button href="" class="right" [routerLink]="['/create/post']">Create Post</a>
+  </li>
+  <li *ngIf="userIsAuthenticated" >
+    <a mat-button href="" class="right" [routerLink]="['/create/todo']">Create Todo</a>
   </li>
 </ul>
 </mat-toolbar>
