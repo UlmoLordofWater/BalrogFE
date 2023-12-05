@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth/auth.service';
-import { resUserDto } from '../dto/resUser.dto';
-import { AuthData } from '../dto/auth-data.model';
+import { AuthService } from '../../../core/auth/auth.service';
+import { resUserDto } from '../../../core/dto/resUser.dto';
+import { AuthData } from '../../../core/dto/auth-data.model';
 
 @Component({
   selector: 'app-profile',

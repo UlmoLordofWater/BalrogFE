@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, provideRouter } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { ProfileComponent } from './profile/profile.component';
-import { HomeComponent } from './home/home.component';
-import {canActivate } from './auth/auth.guard';
-import { PostsComponent } from './posts/posts.component';
-import { TodoComponent } from './todo/todo.component';
+import { LoginComponent } from './core/components/login/login.component';
+import { SignUpComponent } from './core/components/sign-up/sign-up.component';
+import { ProfileComponent } from './features/components/profile/profile.component';
+import { HomeComponent } from './core/components/home/home.component';
+import {canActivate } from './core/guards/auth.guard';
+import { PostsComponent } from './features/components/posts/posts.component';
+import { TodoComponent } from './features/components/todo/todo.component';
 
 const routes: Routes = [
   { path: "", component: SignUpComponent},
