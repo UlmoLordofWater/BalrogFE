@@ -13,8 +13,10 @@ import { ProfileComponent } from './features/components/profile/profile.componen
 import { AngularMaterialModule } from './angular-material.module';
 import { HomeComponent } from './core/components/home/home.component';
 import { ErrorComponent } from './error/error.component';
-import { PostsComponent } from './features/components/posts/posts.component';
-import { TodoComponent } from './features/components/todo/todo.component';
+import { PostsComponent } from './features/components/posts/post-list/posts.component';
+import { TodoComponent } from './features/components/todo/todo-list/todo.component';
+import { TodoCreateComponent } from './features/components/todo/todo-create/todo-create.component';
+import { PostCreateComponent } from './features/components/posts/post-create/post-create.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { TodoComponent } from './features/components/todo/todo.component';
     HomeComponent,
     ErrorComponent,
     PostsComponent,
-    TodoComponent
+    TodoComponent,
+    TodoCreateComponent,
+    PostCreateComponent
   ],
   imports: [
     BrowserModule,

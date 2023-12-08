@@ -1,4 +1,8 @@
 <mat-card>
+  <h1 class="header">Login Here!</h1>
+</mat-card>
+<mat-card class="holder">
+<mat-card>
   <form class="loginForm" (submit)="onLogin(loginForm)" #loginForm="ngForm">
   <mat-form-field>
     <input matInput name="email" ngModel type="email" placeholder="E-Mail" #emailInput="ngModel" required email/><br>
@@ -11,3 +15,5 @@
 </div>
 </form>
 </mat-card>
+</mat-card>
+

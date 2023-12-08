@@ -1,0 +1,20 @@
+<!-- <img class="homeImage img-responsive" src="../../assets/placeholder.png"> -->
+<mat-card>
+  <h1>Due</h1>
+<mat-card class="todos" *ngFor="let todo of todos">
+  <div *ngIf="todo.complete === false">
+  <input type="checkbox" value="todo.complete">
+  {{todo.title}}
+</div>
+</mat-card>
+<h1>Finished</h1>
+<mat-card class="todos" *ngFor="let todo of todos">
+  <div *ngIf="todo.complete === true">
+  <input type="checkbox" value="todo.complete">
+  {{todo.title}}
+</div>
+</mat-card>
+</mat-card>
+
+
+

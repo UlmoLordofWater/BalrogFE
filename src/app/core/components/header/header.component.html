@@ -16,6 +16,12 @@
     <a mat-button href="" class="right" (click)="onLogout()" [routerLink]="['/']">Logout</a>
   </li>
   <li *ngIf="userIsAuthenticated" >
+    <a mat-button href="" class="right" [routerLink]="['/posts']">Posts</a>
+  </li>
+  <li *ngIf="userIsAuthenticated" >
+    <a mat-button href="" class="right" [routerLink]="['/todos']">Todos</a>
+  </li>
+  <li *ngIf="userIsAuthenticated" >
     <a mat-button href="" class="right" [routerLink]="['/create/post']">Create Post</a>
   </li>
   <li *ngIf="userIsAuthenticated" >

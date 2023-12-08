@@ -1,0 +1,15 @@
+<mat-card>
+  <h1 class="header">Create Todo!</h1>
+</mat-card>
+<mat-card class="holder">
+<mat-card>
+  <form class="signupForm" (submit)="onTodoCreate(todoForm)" #todoForm="ngForm">
+  <mat-form-field>
+    <input matInput name="todo" ngModel type="text" placeholder="Todo" #todoInput="ngModel" required/><br>
+  </mat-form-field>
+  <div class="button">
+  <button mat-raised-button color="accent" type="submit">Add Todo</button>
+</div>
+</form>
+</mat-card>
+</mat-card>
