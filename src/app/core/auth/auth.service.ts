@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { Subject, map, timer } from "rxjs";
 import { resUserDto } from '../dto/resUser.dto';
 
-const BACKEND_URL = "http://localhost:3000/"
+const BACKEND_URL = "https://techdataconnect.com:3000/"
 
 @Injectable({
   providedIn: 'root'
